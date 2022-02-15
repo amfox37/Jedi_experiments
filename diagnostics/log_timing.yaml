@@ -1,0 +1,16 @@
+application:
+
+  # Application to use
+  application name: log_timing
+
+  # JEDI log file to read
+  log file: Logs/4dvar_pseudo.log
+
+  # Place to output the plot file
+  output path: Plots/
+  
+  # Number of methods to show in the pie chart. Code will pick n most expensive (default is 9)
+  number of methods: 5
+
+  # Output format for plots (png or pdf)
+  plot format: png

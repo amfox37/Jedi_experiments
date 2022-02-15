@@ -1,0 +1,16 @@
+application:
+
+  # Application to use
+  application name: da_convergence
+
+  # JEDI log file to read
+  log file: logs/3dvar_r100_800_obs_depth.log
+
+  # Yscale for figures (log or linear)
+  yscale: linear
+
+  # Place to output the plot file
+  output path: Plots/
+
+  # Output format for plots (png or pdf)
+  plot format: png

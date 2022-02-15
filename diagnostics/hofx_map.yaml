@@ -1,0 +1,31 @@
+application:
+
+  # Application to use
+  application name: hofx_map
+
+  # IODA output files containing h(x)
+  hofx files: output/hofx/hofx3d_owp.snow_depth_0000.nc
+
+  # Place to output the plot file
+  output path: Plots/
+
+  # Variable to plot (either something from the file or variable@omb)
+  variable: snow_depth@omb
+
+  # Units of the field being plotted
+  units: mm
+
+  # Window length (hours)
+  window length: 6
+
+  # Offset of time in filename from window center (hours), e.g. -3, +3 or 0
+  time offset: 0
+
+  # Output format for plots ([png] or pdf)
+  plot format: png
+
+  # User defined colorbar minimum
+  #colorbar minimum: -1
+
+  # User defined colorbar maximum
+  #colorbar maximum: 1
