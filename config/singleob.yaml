@@ -1,0 +1,10 @@
+obsdataout: input/obs/singleob_iodav2.nc
+lockeys:
+  latitude: 39.0
+  longitude: -106.55
+  datetime: '2017-01-01T00:00:00Z'
+variable:
+  name: 'swe'
+  obsvalue: 220
+  obserr: 0.001
+  preqc: 0
