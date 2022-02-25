@@ -1,6 +1,6 @@
 #!/bin/bash
 
-JEDI_BUILD_DIR=/glade/u/home/afox/work/jedi/wrf_hydro_nwm_jedi/build
+JEDI_BUILD_DIR=/Users/afox/Jedi/wrf_hydro_internal/build
 echo "JEDI build directory = "${JEDI_BUILD_DIR}
 
 # Define JEDI bin directory where the executables are found

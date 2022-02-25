@@ -4,10 +4,10 @@ application:
   application name: hofx_map
 
   # IODA output files containing h(x)
-  hofx files: output/hofx/hofx3d_owp.snow_depth_0000.nc
+  hofx files: output/hofx/hofx3d_owp_snow_depth_2020030100_0000.nc
 
   # Place to output the plot file
-  output path: Plots/
+  output path: diagnostics/
 
   # Variable to plot (either something from the file or variable@omb)
   variable: snow_depth@omb

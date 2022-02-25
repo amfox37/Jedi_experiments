@@ -9,10 +9,10 @@ geometry:
 model:
   name: 'WRF_HYDRO_NWM_JEDI'
   tstep: PT1H
-  model variables: &model_vars ['SNEQV']
+  model variables: &model_vars ['SNEQV','SNOWH']
 
 state:
-  state variables: ['SNEQV']
+  state variables: ['SNEQV','SNOWH']
   date: *date
   read_from_file: 1
   basename: ./INPUT/
@@ -24,11 +24,20 @@ observations:
     name: 'Simulate'
     simulated variables: ['swe']
     obsdatain:
-      obsfile: 'input/obs/singleobv2.nc'
+      obsfile: 'input/obs/Single_obs_swe_out.nc'
     obsdataout:
       obsfile: 'output/hofx/hofx3d.swe_single_obs.nc'
   obs operator:
       name: 'Identity'
+- obs space:
+    name: 'Simulate'
+    simulated variables: ['snow_depth']
+    obsdatain:
+      obsfile: 'input/obs/Single_obs_depth_out.nc'
+    obsdataout:
+      obsfile: 'output/hofx/hofx3d.depth_single_obs.nc'
+  obs operator: 
+      name: 'Identity'      
 
 prints:
   frequency: PT1H

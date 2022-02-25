@@ -23,18 +23,18 @@ observations:
     name: 'Simulate'
     simulated variables: ['swe']
     obsdatain:
-      obsfile: 'input/obs/conus_owp_snow_obs_swe_csv_2020030100.nc'
+      obsfile: 'OWP_obs/2020/202003/owp_swe_2020030100.nc'
     obsdataout:
-      obsfile: 'output/hofx/hofx3d_owp.swe.nc'
+      obsfile: 'output/hofx/hofx3d_owp_swe_2020030100.nc'
   obs operator:
       name: 'Identity'
 - obs space:
     name: 'Simulate'
     simulated variables: ['snow_depth']
     obsdatain:
-      obsfile: 'input/obs/conus_owp_snow_obs_depth_csv_2020030100.nc'
+      obsfile: 'OWP_obs/2020/202003/owp_depth_2020030100.nc'
     obsdataout:
-      obsfile: 'output/hofx/hofx3d_owp.snow_depth.nc'
+      obsfile: 'output/hofx/hofx3d_owp_snow_depth_2020030100.nc'
   obs operator:
       name: 'Identity'
 
