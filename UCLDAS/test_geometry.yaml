@@ -1,0 +1,2 @@
+geometry:
+  input_file: Data/wrf_hydro_nwm_files/offline_geometry.nc
