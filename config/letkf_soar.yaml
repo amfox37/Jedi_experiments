@@ -23,17 +23,17 @@ observations:
     distribution: InefficientDistribution
     simulated variables: ['snow_depth']
     obsdatain:
-      obsfile: './input/obs/Single_obs_depth_out.nc'
+      obsfile: './input/obs/Single_obs_depth_2017010100.nc'
     obsdataout:
-      obsfile: './output/letkf/singleob.depth.nc'
+      obsfile: './output/letkf/single_obs/singleob_depth_obs.2017-01-01T00:00:00Z.PT0S'
   obs operator:
       name: 'Identity'    
   obs error:
       covariance model: 'diagonal'
   obs localizations:
   - localization method: Horizontal SOAR
-#    lengthscale: 25000
-#    soar horizontal decay: 0.001
+#    lengthscale: 250e3
+#    soar horizontal decay: 0.000021
     lengthscale: 250e3
     soar horizontal decay: 0.000021
     max nobs: 50
@@ -42,7 +42,7 @@ observations:
 
 driver:
   save posterior mean: true
-  save posterior ensemble: true
+  save posterior ensemble: false
   save posterior mean increment: true
 
 local ensemble DA:
@@ -53,13 +53,13 @@ local ensemble DA:
     mult: 1.0
 
 output:
-  datadir: './output/letkf'
+  datadir: './output/letkf/single_obs'
   date: *date
   exp: letkf
   type: 'ens'
 
 output increment:
-  datadir: './output/letkf'
+  datadir: './output/letkf/single_obs'
   date: *date
   exp: letkf_inc
   type: 'ens'

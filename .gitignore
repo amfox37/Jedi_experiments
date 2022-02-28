@@ -2,3 +2,4 @@ output/
 .ipynb_checkpoints
 RESTART.*
 HYDRO_RST*
+*.png
