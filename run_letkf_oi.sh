@@ -13,4 +13,4 @@ cp ./input/wrf_hydro_nwm_files/RESTART.2017010100_DOMAIN1 ./output/letkf/single_
 cp ./input/wrf_hydro_nwm_files/HYDRO_RST.2017-01-01_00:00_DOMAIN1 ./output/letkf/single_obs/letkf.hyd.ens.0.2017-01-01T00:00:00Z.PT0S
 cp ./input/wrf_hydro_nwm_files/HYDRO_RST.2017-01-01_00:00_DOMAIN1 ./output/letkf/single_obs/letkf_inc.hyd.ens.0.2017-01-01T00:00:00Z.PT0S
 
-$jedibin/wrf_hydro_nwm_jedi_letkf.x config/letkf_soar.yaml logs/nwm_jedi.log
+$jedibin/wrf_hydro_nwm_jedi_letkf.x config/letkf_oi.yaml logs/nwm_jedi.log
