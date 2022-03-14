@@ -8,14 +8,24 @@ background:
   members:
     - date: &date 2017-01-01T00:00:00Z
       read_from_file: 1
-      filename_lsm: ./input/wrf_hydro_nwm_files/RESTART.2017010100_DOMAIN1_mem001
+      filename_lsm: ./input/wrf_hydro_nwm_files/ensemble/RESTART.2017010100_DOMAIN1_mem000
       filename_hydro: ./input/wrf_hydro_nwm_files/HYDRO_RST.2017-01-01_00:00_DOMAIN1
       state variables: ['SNOWH']
     - date: 2017-01-01T00:00:00Z
       read_from_file: 1
-      filename_lsm: ./input/wrf_hydro_nwm_files/RESTART.2017010100_DOMAIN1_mem002
+      filename_lsm: ./input/wrf_hydro_nwm_files/ensemble/RESTART.2017010100_DOMAIN1_mem001
       filename_hydro: ./input/wrf_hydro_nwm_files/HYDRO_RST.2017-01-01_00:00_DOMAIN1
-      state variables: ['SNOWH']  
+      state variables: ['SNOWH']
+    - date: 2017-01-01T00:00:00Z
+      read_from_file: 1
+      filename_lsm: ./input/wrf_hydro_nwm_files/ensemble/RESTART.2017010100_DOMAIN1_mem002
+      filename_hydro: ./input/wrf_hydro_nwm_files/HYDRO_RST.2017-01-01_00:00_DOMAIN1
+      state variables: ['SNOWH']
+    - date: 2017-01-01T00:00:00Z
+      read_from_file: 1
+      filename_lsm: ./input/wrf_hydro_nwm_files/ensemble/RESTART.2017010100_DOMAIN1_mem003
+      filename_hydro: ./input/wrf_hydro_nwm_files/HYDRO_RST.2017-01-01_00:00_DOMAIN1
+      state variables: ['SNOWH']            
 
 observations:
 - obs space:
@@ -37,8 +47,8 @@ observations:
     lengthscale: 250e3
     soar horizontal decay: 0.000021
     max nobs: 50
-  - localization method: Vertical Brasnett
-    vertical lengthscale: 700  
+#  - localization method: Vertical Brasnett
+#    vertical lengthscale: 700  
 
 driver:
   save posterior mean: true
