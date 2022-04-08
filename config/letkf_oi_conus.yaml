@@ -2,19 +2,19 @@ window begin: '2020-02-29T00:00:00Z'
 window length: PT48H
 
 geometry:
-  input_file: ./input/wrf_hydro_nwm_files/geometry_cfs_long_range_ens.nc
+  input_file: ./input/wrf_hydro_nwm_files/conus/geometry_cfs_long_range_ens.nc
 
 background:
   members:
     - date: &date 2020-03-01T00:00:00Z
       read_from_file: 1
-      filename_lsm: ./input/wrf_hydro_nwm_files/RESTART.2020030100_DOMAIN1_mem001
-      filename_hydro: ./input/wrf_hydro_nwm_files/HYDRO_RST.2020-03-01_00:00_DOMAIN1
+      filename_lsm: ./input/wrf_hydro_nwm_files/conus/RESTART.2020030100_DOMAIN1_mem001
+      filename_hydro: ./input/wrf_hydro_nwm_files/conus/HYDRO_RST.2020-03-01_00:00_DOMAIN1
       state variables: ['SNOWH']
     - date: 2020-03-01T00:00:00Z
       read_from_file: 1
-      filename_lsm: ./input/wrf_hydro_nwm_files/RESTART.2020030100_DOMAIN1_mem002
-      filename_hydro: ./input/wrf_hydro_nwm_files/HYDRO_RST.2020-03-01_00:00_DOMAIN1
+      filename_lsm: ./input/wrf_hydro_nwm_files/conus/RESTART.2020030100_DOMAIN1_mem002
+      filename_hydro: ./input/wrf_hydro_nwm_files/conus/HYDRO_RST.2020-03-01_00:00_DOMAIN1
       state variables: ['SNOWH']  
 
 observations:
@@ -53,13 +53,13 @@ local ensemble DA:
     mult: 1.0
 
 output:
-  datadir: './output/letkf/conus_swe'
+  datadir: './output/letkf/conus'
   date: *date
   exp: letkf
   type: 'ens'
 
 output increment:
-  datadir: './output/letkf/conus_swe'
+  datadir: './output/letkf/conus'
   date: *date
   exp: letkf_inc
   type: 'ens'

@@ -1,5 +1,5 @@
 output/
 .ipynb_checkpoints
-RESTART.*
-HYDRO_RST*
+input/wrf_hydro_nwm_files/conus/
+input/staticb
 *.png
