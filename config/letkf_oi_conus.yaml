@@ -25,7 +25,7 @@ observations:
     obsdatain:
       obsfile: './input/obs/owp_depth_2020030100.nc'
     obsdataout:
-      obsfile: './output/letkf/conus_swe/owp_depth_2020030100.nc'
+      obsfile: './output/letkf/conus/owp_depth_2020030100.nc'
   obs operator:
       name: 'Identity'    
   obs error:
