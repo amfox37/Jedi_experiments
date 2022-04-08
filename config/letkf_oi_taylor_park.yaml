@@ -2,7 +2,7 @@ window begin: &date '2019-03-01T00:30:00Z'
 window length: PT1H
 
 geometry:
-  input_file: ./input/wrf_hydro_nwm_files/geometry_nwm_long_range_snow.nc
+  input_file: ./input/wrf_hydro_nwm_files/taylor_park/geometry_nwm_long_range_snow.nc
 
 background:
   members:
