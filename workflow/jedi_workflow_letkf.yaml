@@ -1,0 +1,52 @@
+experiment:
+  name: 'letkfoi_'
+  num_p: 36
+  compiler: gnu
+  workflow_work_dir: /glade/u/home/afox/work/jedi/Jedi_experiments/workflow/expts/march_021
+
+  init:
+    restarts_dir: /glade/work/afox/jedi/Jedi_experiments/input/wrf_hydro_nwm_files/colorado/
+#    restarts_dir: /glade/u/home/afox/work/jedi/Jedi_experiments/workflow/expts
+    obs_dir: /glade/work/afox/jedi/Jedi_experiments/OWP_obs/2021/202103
+
+  jedi:
+    method: LETKF-OI
+    LETKF-OI:
+      exe: /glade/work/afox/jedi/wrf_hydro_nwm_jedi/build/bin/wrf_hydro_nwm_jedi_letkf.x
+      yaml: /glade/u/home/afox/work/jedi/Jedi_experiments/workflow/letkf_oi_colorado.yaml
+      increment: True
+      vars:
+        SNOWH: 0.02121
+        SNEQV: 21.21*0.25
+    hofx:
+      exe: /glade/work/afox/jedi/wrf_hydro_nwm_jedi/build/bin/wrf_hydro_nwm_jedi_hofx3d.x
+      yaml: /glade/u/home/afox/work/jedi/Jedi_experiments/workflow/hofx_colorado.yaml
+      increment: False
+    3dvar:
+      exe: /path/to/wrf_hydro_nwm_jedi_var.x
+      yaml: /path/to/3dvar_owp.yaml
+      increment: True
+
+  increment:
+    exe: /glade/work/afox/jedi/add_jedi_increment/bin/jedi_increment
+
+  wrf_hydro:
+    src_dir: /glade/u/home/afox/work/wrf_hydro_nwm_public/trunk/NDHMS
+    domain_dir: /glade/u/home/afox/work/jedi/Jedi_experiments/input/wrf_hydro_files/CO_state_domain
+    hydro_json: /glade/u/home/afox/work/jedi/Jedi_experiments/input/wrf_hydro_files/CO_state_domain/hydro_namelists.json
+    hrldas_json: /glade/u/home/afox/work/jedi/Jedi_experiments/input/wrf_hydro_files/CO_state_domain/hrldas_namelists.json
+    hydro_patches_json: /glade/u/home/afox/work/jedi/Jedi_experiments/input/wrf_hydro_files/CO_state_domain/hydro_namelist_patches.json
+    hrldas_patches_json: /glade/u/home/afox/work/jedi/Jedi_experiments/input/wrf_hydro_files/CO_state_domain/hrldas_namelist_patches.json
+    version: 'v5.2.0'
+    config: 'nwm_long_range'
+
+  # WRF-Hydro only is run in a precycle if start_wrf-h_time is
+  # less than start_jedi_time
+  time:
+    # start_wrf-h_time: 2019-02-27_01:00:00 # precycl would be ran
+    start_wrf-h_time: 2021-03-01_00:00:00
+    start_jedi_time:  2021-03-01_00:00:00
+    end_time:         2021-03-31_00:00:00
+    assim_window:
+      hours: 24
+    advance_model_hours: 24
